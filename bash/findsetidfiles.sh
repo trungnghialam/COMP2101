@@ -32,5 +32,5 @@ echo ""
 
 echo "10 largest file"
 echo "============="
-find / -type f -ls 2>/dev/null | sort -k 7 -r -n | head -10 | column -t | awk '{print $5,$6,$7,$11}'
+find / -type f -exec ls -alh 2>/dev/null --block-size=M {} + | sort -k 5 -r -n | head -10 | awk '{print $3,$4,$5,$9}'
 echo ""
