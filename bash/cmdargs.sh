@@ -29,7 +29,7 @@ while [ $# -gt 0 ]; do
     -d )
     case "$2" in
       -d )
-      echo "You added -d for debug level $2."
+      echo "You add -d to debug level."
       shift
       ;;
       *)
