@@ -38,7 +38,7 @@ while [ $# -gt 0 ]; do
     ;;
     *)
     errors=$1
-    echo "Error: unkown value $errors"
+    echo "Error $errors"
     ;;
   esac
   # each time through the loop, shift the arguments left
