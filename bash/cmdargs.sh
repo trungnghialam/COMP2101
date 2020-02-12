@@ -21,15 +21,14 @@ while [ $# -gt 0 ]; do
 #          Anything that wasn't recognized on the command line should still go into the myargs array
   case $1 in
     -h )
-    echo 'You added "-h" for help.'
+    echo 'Add "-h" for help.'
     ;;
     -v )
-    echo 'You added "-v" for varbose.'
+    echo 'Add "-v" for varbose.'
     ;;
-    -d )
     case "$2" in
       -d )
-      echo "You add -d to debug level."
+      echo "Add -d to debug level."
       shift
       ;;
       *)
