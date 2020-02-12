@@ -26,18 +26,17 @@ while [ $# -gt 0 ]; do
     -v )
     echo 'Add "-v" for varbose.'
     ;;
-    case "$2" in
+    *)
+    errors=$1
+    echo "Error $errors"
+  esac
+  case "$2" in
       -d )
       echo "Add -d to debug level."
       shift
       ;;
       *)
       myargs=$1
-    esac
-    ;;
-    *)
-    errors=$1
-    echo "Error $errors"
     ;;
   esac
   # each time through the loop, shift the arguments left
