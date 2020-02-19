@@ -60,7 +60,7 @@ echo "Done"
 #         Print out the myargs array with a label
 
 
-if [ $a = 1 ]; then
+if [ $a -eq 1 ]; then
   echo "Verbose mode is on"
 elsse
   echo "Verbose mode is off"
