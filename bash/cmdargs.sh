@@ -24,20 +24,25 @@ while [ $# -gt 0 ]; do
     echo 'Add "-h" for help.'
     ;;
     -v )
-    echo 'Add "-v" for varbose.'
+    echo 'Add "-v" for verbose.'
+    a=1
     ;;
-    *)
-    errors=$1
-    echo "Error $errors"
-  esac
-  case "$2" in
-      -d )
-      echo "Add -d to debug level."
+    -d)
+    b=1
+    case "$2" in
+      [1-5])
+      echo "Add -d to debug level $2."
       shift
       ;;
       *)
-      myargs=$1
-    ;;
+    shift
+  esac
+  ;;
+  *)
+  errors=$1
+  echo "Error $errors"
+  shift
+  ;;
   esac
   # each time through the loop, shift the arguments left
   # this decrements the argument count for us
@@ -53,3 +58,16 @@ echo "Done"
 #         Tell the user if vebose mode is on
 #         Tell the user if debug mode is on and if it is, what number it is set to
 #         Print out the myargs array with a label
+
+
+if [ $a = 1 ]; then
+  echo "Verbose mode is on"
+elsse
+  echo "Verbose mode is off"
+fi
+
+if [ $w -gt 0 ]; then
+  echo "Debug mode is on"
+else
+  echo "Debug mode is off"
+fi
